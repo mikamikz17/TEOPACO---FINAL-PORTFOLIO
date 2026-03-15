@@ -24,7 +24,31 @@ body {
 .navbar {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding-top: 25px;
+  position: relative;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--green-dark);
+  border-radius: 2px;
+  transition: 0.3s ease;
 }
 
 .nav-links {
@@ -308,18 +332,6 @@ body {
   color: var(--green-dark);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .img-placeholder,
-  .project-images img,
-  .about-img {
-    width: 90%;
-    height: auto;
-  }
-}
-
-/* ============================= */
-/* CONTACT PAGE - FULLY REVERTED */
 .contact-wrapper {
   text-align: center;
   margin: 100px auto;
@@ -406,16 +418,130 @@ body {
   opacity: 0.6;
 }
 
-@media (max-width: 600px) {
-  .contact-card {
+@media (max-width: 900px) {
+  .img-placeholder,
+  .project-images img,
+  .about-img {
     width: 90%;
-    padding: 30px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 20px;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    top: 58px;
+    right: 20px;
+    background: var(--bg);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    z-index: 100;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hero {
+    margin-top: 80px;
+    padding: 0 20px;
+  }
+
+  .name {
+    font-size: 64px;
+  }
+
+  .tagline {
+    position: static;
+    margin-top: 40px;
+    padding: 10px 20px 30px;
+  }
+
+  .section {
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+
+  .page-centered {
+    padding: 20px 20px 60px;
+    margin-top: 40px;
+  }
+
+  .projects-list {
+    margin: 60px auto;
+    padding: 0 20px;
+    gap: 80px;
+  }
+
+  .project-desc {
+    padding: 0 5px;
+  }
+
+  .resume-section {
+    margin: 60px auto 30px;
+    padding: 0 20px;
+  }
+
+  .certifications-section {
+    margin: 30px auto 60px;
+    padding: 0 20px;
+  }
+
+  .resume-section ul,
+  .certifications-section ul {
+    padding: 0 5px;
+  }
+
+  .contact-wrapper {
+    margin: 60px auto;
+    padding: 0 20px;
   }
 
   .contact-heading {
     font-size: 28px;
-    width: 90%;
+    width: 100%;
     text-align: center;
+  }
+
+  .contact-card {
+    width: 100%;
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 48px;
+  }
+
+  .profession {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+
+  .hero h2 {
+    font-size: 16px;
+  }
+
+  .project-title {
+    font-size: 24px;
+  }
+
+  .contact-socials {
+    gap: 24px;
+    font-size: 22px;
   }
 }
 

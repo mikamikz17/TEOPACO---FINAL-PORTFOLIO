@@ -1,25 +1,50 @@
-<script>
-
 const form = document.getElementById("contact-form");
 
 if (form) {
-  form.addEventListener("submit", function(e) {
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-    e.preventDefault(); // stop page reload
+    const submitBtn = form.querySelector(".submit-btn");
+    submitBtn.textContent = "sending...";
+    submitBtn.disabled = true;
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+    const data = new FormData(form);
+    const json = Object.fromEntries(data.entries());
 
-    if (!name || !email || !message) {
-      alert("Please fill out all fields!");
-      return;
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(json)
+    });
+
+    const result = await res.json();
+    const msg = document.getElementById("form-message");
+
+    if (result.success) {
+      msg.textContent = "message sent! thank you, " + json.name + "!";
+      msg.style.color = "var(--green-dark)";
+      form.reset();
+    } else {
+      msg.textContent = "something went wrong. please try again.";
+      msg.style.color = "var(--pink-dark)";
     }
 
-    alert("Message sent successfully! Thank you, " + name + "!");
-    form.reset();
-
-  })
+    submitBtn.textContent = "submit";
+    submitBtn.disabled = false;
+  });
 }
 
-</script>
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", function() {
+    navLinks.classList.toggle("open");
+  });
+
+  document.addEventListener("click", function(e) {
+    if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+      navLinks.classList.remove("open");
+    }
+  });
+}
