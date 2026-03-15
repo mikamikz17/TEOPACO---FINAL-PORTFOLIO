@@ -1,0 +1,437 @@
+:root {
+  --bg: #FFFCFB;
+  --text: #1f1f1f; /* original black text for home and about */
+  --green-dark: #3F663B;
+  --green-light: #B0CE88;
+  --pink-dark: #DD6780;
+  --pink-light: #FEC2CF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #000;  /* black nav text */
+  text-transform: lowercase;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+  background: var(--green-dark);
+  color: #fff;
+}
+
+.nav-links a.active {
+  background: var(--green-dark);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-top: 180px;
+}
+
+.hero h2 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.name {
+  font-family: 'Darumadrop One', cursive;
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+
+.name span:nth-child(1) { color: var(--green-dark); }
+.name span:nth-child(2) { color: var(--pink-dark); }
+.name span:nth-child(3) { color: var(--green-light); }
+.name span:nth-child(4) { color: var(--pink-dark); }
+
+.profession {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background: var(--green-light);
+  color: var(--text);
+  padding: 8px 22px;
+  border-radius: 18px;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.tagline {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* FORCE DARUMADROP */
+.daruma {
+  font-family: 'Darumadrop One', cursive !important;
+}
+
+/* GENERIC SECTIONS */
+.section {
+  max-width: 700px;
+  margin: 120px auto;
+  text-align: center;
+}
+
+.section,
+.projects-list,
+.resume-section,
+.certifications-section,
+.contact-wrapper,
+.page-centered {
+  color: var(--green-dark);
+}
+
+.section h2,
+.section h3 {
+  font-family: 'Darumadrop One', cursive;
+  margin-bottom: 15px;
+}
+
+.section ul {
+  list-style: none;
+  margin-bottom: 40px;
+  padding-left: 0;
+}
+
+.section li {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* ABOUT PAGE (UNCHANGED) */
+.page-centered {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-img {
+  width: 220px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-img:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.about-heading {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: var(--pink-dark);
+}
+
+.page-centered p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+/* PROJECTS PAGE */
+.project-card {
+  margin-bottom: 60px;
+}
+
+.project-card h3 {
+  font-family: 'Darumadrop One', cursive;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* ============================= */
+/* RESUME + CERTIFICATIONS */
+.resume-section {
+  max-width: 700px;
+  margin: 80px auto 40px auto;
+  text-align: center;
+  color: var(--green-dark);
+}
+
+.certifications-section {
+  max-width: 700px;
+  margin: 40px auto 80px auto;
+  text-align: center;
+  color: var(--green-dark);
+}
+
+.resume-section h2,
+.certifications-section h2 {
+  font-family: 'Darumadrop One', cursive;
+  margin-bottom: 20px;
+}
+
+/* 🔥 Alternating colors for resume + certification headers ONLY */
+.resume-section h2 span:nth-child(odd),
+.certifications-section h2 span:nth-child(odd) {
+  color: var(--pink-dark);
+}
+
+.resume-section h2 span:nth-child(even),
+.certifications-section h2 span:nth-child(even) {
+  color: var(--green-dark);
+}
+
+.resume-section ul,
+.certifications-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto 30px auto;
+  text-align: left;
+  max-width: 600px;
+  color: var(--green-dark);
+}
+
+.resume-section li,
+.certifications-section li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: var(--green-dark);
+}
+
+/* ============================= */
+/* PROJECTS LIST STYLE */
+.projects-list {
+  max-width: 1100px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+  text-align: center;
+  color: var(--green-dark);
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-images {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.img-placeholder,
+.project-images img,
+.about-img {
+  width: 500px;      
+  height: 300px;     
+  object-fit: cover; 
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-placeholder:hover,
+.project-images img:hover,
+.about-img:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* 🔥 Alternating colors for project titles */
+.project-title {
+  font-family: 'Darumadrop One', cursive;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.project-title span:nth-child(odd) {
+  color: var(--pink-dark);
+}
+
+.project-title span:nth-child(even) {
+  color: var(--green-dark);
+}
+
+.project-desc {
+  max-width: 650px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: var(--green-dark);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .img-placeholder,
+  .project-images img,
+  .about-img {
+    width: 90%;
+    height: auto;
+  }
+}
+
+/* ============================= */
+/* CONTACT PAGE - FULLY REVERTED */
+.contact-wrapper {
+  text-align: center;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--green-dark);
+}
+
+.contact-heading {
+  width: 500px;
+  text-align: left;
+  font-size: 38px;
+  color: var(--green-dark);
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.contact-card {
+  background: var(--green-light);
+  padding: 40px 50px;
+  border-radius: 8px;
+  width: 500px;
+  margin-bottom: 40px;
+  color: var(--green-dark);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.contact-form label {
+  font-size: 14px;
+  color: var(--green-dark);
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--green-dark);
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.submit-btn {
+  align-self: center;
+  margin-top: 10px;
+  background: white;
+  color: var(--green-dark);
+  border: none;
+  padding: 6px 20px;
+  border-radius: 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+.contact-socials {
+  display: flex;
+  gap: 40px;
+  font-size: 28px;
+}
+
+.contact-socials a {
+  color: var(--pink-dark);
+  transition: 0.2s ease;
+}
+
+.contact-socials a:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .contact-card {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .contact-heading {
+    font-size: 28px;
+    width: 90%;
+    text-align: center;
+  }
+}
+
+/* ============================= */
+/* Project buttons side-by-side */
+.project-buttons {
+  display: flex;
+  gap: 15px;           /* space between buttons */
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Responsive: stack buttons on small screens */
+@media (max-width: 600px) {
+  .project-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
