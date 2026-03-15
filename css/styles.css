@@ -1,6 +1,6 @@
 :root {
   --bg: #FFFCFB;
-  --text: #1f1f1f; /* original black text for home and about */
+  --text: #1f1f1f;
   --green-dark: #3F663B;
   --green-light: #B0CE88;
   --pink-dark: #DD6780;
@@ -60,7 +60,7 @@ body {
 .nav-links a {
   text-decoration: none;
   font-size: 14px;
-  color: #000;  /* black nav text */
+  color: #000; 
   text-transform: lowercase;
   padding: 6px 14px;
   border-radius: 20px;
@@ -128,7 +128,6 @@ body {
   font-size: 12px;
 }
 
-/* FORCE DARUMADROP */
 .daruma {
   font-family: 'Darumadrop One', cursive !important;
 }
@@ -166,7 +165,7 @@ body {
   margin-bottom: 8px;
 }
 
-/* ABOUT PAGE (UNCHANGED) */
+/* ABOUT PAGE */
 .page-centered {
   text-align: center;
   margin-top: 60px;
@@ -237,7 +236,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* 🔥 Alternating colors for resume + certification headers ONLY */
 .resume-section h2 span:nth-child(odd),
 .certifications-section h2 span:nth-child(odd) {
   color: var(--pink-dark);
@@ -309,7 +307,6 @@ body {
   box-shadow: 0 12px 30px rgba(0,0,0,0.2);
 }
 
-/* 🔥 Alternating colors for project titles */
 .project-title {
   font-family: 'Darumadrop One', cursive;
   font-size: 32px;
@@ -546,15 +543,14 @@ body {
 }
 
 /* ============================= */
-/* Project buttons side-by-side */
+
 .project-buttons {
   display: flex;
-  gap: 15px;           /* space between buttons */
+  gap: 15px;   
   justify-content: center;
   margin-top: 10px;
 }
 
-/* Responsive: stack buttons on small screens */
 @media (max-width: 600px) {
   .project-buttons {
     flex-direction: column;
